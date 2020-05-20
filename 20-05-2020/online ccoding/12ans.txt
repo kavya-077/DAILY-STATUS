@@ -1,0 +1,11 @@
+11.Write Python Program to Reverse a Given Number
+This is a Python Program to reverse a given number.
+Problem Description
+The program takes a number and reverses it and store it in another variable and show it
+x = 10
+y = 5
+print("Before Swapping: x = ", x, " y =", y)
+x = x+y
+y = x-y
+x = x-y
+print("After Swapping: x = ", x, " y =", y)
