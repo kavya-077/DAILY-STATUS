@@ -1,0 +1,18 @@
+1.Write a Java Program to separate the Individual Characters from a String
+
+Description:
+In computer science, collection of characters including spaces is called as string. To separate an individual character from the string, individual characters are accessed through its index.
+public class IndividualCharacters  
+{  
+    public static void main(String[] args) {  
+        String string = "characters ";  
+  
+        //Displays individual characters from given string  
+        System.out.println("Individual characters from given string: ");  
+  
+        //Iterate through the string and display individual character  
+        for(int i = 0; i < string.length(); i++){  
+            System.out.print(string.charAt(i) + " ");  
+        }  
+    }  
+}  
