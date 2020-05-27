@@ -1,0 +1,38 @@
+1.Given an array arr[] of the positive integers of size N, the task is to find the largest element on the left side of each index which is smaller than the element present at that index
+#include <bits/stdc++.h> 
+using namespace std; 
+  
+// Function to find the 
+// Largest element before 
+// every element of an array 
+void findMaximumBefore(int arr[], 
+                         int n){ 
+      
+    // Loop to iterate over every 
+    // element of the array 
+    for (int i = 0; i < n; i++) { 
+  
+        int currAns = -1; 
+           
+        // Loop to find the maximum smallest 
+        // number before the element arr[i] 
+        for (int j = i - 1; j >= 0; j--) { 
+            if (arr[j] > currAns && 
+                   arr[j] < arr[i]) { 
+                currAns = arr[j]; 
+            } 
+        } 
+        cout << currAns << " "; 
+    } 
+} 
+  
+// Driver Code 
+int main() 
+{ 
+    int arr[] = { 4, 7, 6, 8, 5 }; 
+  
+    int n = sizeof(arr) / sizeof(arr[0]); 
+  
+    // Function Call 
+    findMaximumBefore(arr, n); 
+} 
