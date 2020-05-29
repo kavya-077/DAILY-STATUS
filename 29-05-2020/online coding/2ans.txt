@@ -1,0 +1,22 @@
+2.We are given 3 strings: str1, str2, and str3. Str3 is said to be a shuffle of str1 and str2 if it can be formed by interleaving the characters of str1 and str2 in a way that maintains the left to right ordering of the characters from each string. For example, given str1="abc" and str2="def", str3="dabecf" is a valid shuffle since it preserves the character ordering of the two strings. So, given these 3 strings write a function that detects whether str3 is a valid shuffle of str1 and str2.
+function stringShuffleCheck(string1, string2, shuffledString) {
+    var i = 0,
+        shuffleLength = shuffledString.length,
+        validShuffle = true;
+    
+    for (i = 0; i < shuffleLength && validShuffle === true; i++) {
+        if (shuffledString[i] !== string2[i] || shuffledString[i + 1] !== string1[i]) {
+            validShuffle = false;
+        }
+    }
+
+    return validShuffle;
+}
+
+function assert(assertion, result) {
+    return assertion + " is " + result;
+}
+
+console.log(assert('dabecf is a valid shuffle of abc and def', stringShuffleCheck('abc', 'def', 'dabecf')));
+console.log(assert('fcoagb is a valid shuffle cab and fog', stringShuffleCheck('cab', 'fog', 'fcoagb')));
+console.log(assert('fco4gb is not a valid shuffle cab and fog', stringShuffleCheck('cab', 'fog', 'fco4gb')));
