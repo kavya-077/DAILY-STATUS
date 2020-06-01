@@ -1,0 +1,9 @@
+1,Python Program to remove duplicate elements from a list    final_list = [] 
+    for num in duplicate: 
+        if num not in final_list: 
+            final_list.append(num) 
+    return final_list 
+      
+# Driver Code 
+duplicate = []; 
+print(Remove(duplicate)) 

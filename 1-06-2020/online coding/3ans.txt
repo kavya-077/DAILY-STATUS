@@ -1,0 +1,25 @@
+3.Given an array of positive integers. Write a C Program to find the leaders in the array.
+void printLeaders(int arr[], int n)
+{
+    int maximum =  arr[n-1];
+    int i;
+ 
+    // Rightmost element is always leader
+    printf("%d ", maximum);
+      
+    for(i = n-2; i >= 0; i--)
+    {
+        if(maximum < arr[i])
+        {
+           printf("%d ", arr[i]);
+           maximum = arr[i];
+        }
+    }   
+}
+ 
+int main()
+{
+  int arr[] = {6, 7, 4, 3, 5, 2};
+  printLeaders(arr, 6);
+  return 0; 
+}  
