@@ -1,0 +1,12 @@
+3.Python program to return a list containing first and last element using list slicing method
+test_list = []; 
+  
+# printing original list  
+print ("The original list is : " +  str(test_list)) 
+  
+# using list indexing 
+# to get first and last element of list 
+res = [ test_list[0], test_list[-1] ]  
+  
+# printing result 
+print ("The first and last element of list are : " +  str(res))
