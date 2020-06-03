@@ -1,0 +1,9 @@
+2.Take a list of length 3 containing integers, find out which is larger, first or last one and set all the elements in the list to be that value. Print the updated list
+List = [] 
+print("\nList with the use of Numbers: ") 
+print(List) 
+  
+ 
+List = [1, 2, 'Geeks', 4, 'For', 6, 'Geeks'] 
+print("\nList with the use of Mixed Values: ") 
+print(List) 
