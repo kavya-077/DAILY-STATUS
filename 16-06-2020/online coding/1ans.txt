@@ -1,0 +1,124 @@
+1.Write a C Program to perform the following operations on Triply Linked List
+#include<stdio.h>
+#include<conio.h>
+struct node *insert_begin(struct node *start)
+{
+    struct node *new_node;
+    int num;
+    printf("\n enter the value");
+    scanf("%d",&num);
+    new_node=(struct node *)malloc(sizeof(struct node));
+    new_node->data=num;
+    new_node->next=start;
+    start=new_node;
+    return start;
+}
+struct node *insert_end(struct node *start)
+{
+    struct node *new_node,*ptr;
+    ptr=start;
+    int num;
+    printf("\n enter the value");
+    scanf("%d",&num);
+    new_node=(struct node *)malloc(sizeof(struct node));
+    new_node->data=num;
+    while(ptr->next!=NULL)
+{
+        ptr=ptr->next;  
+    }
+    ptr->next=new_node;
+    new_node->next=NULL;
+    return start;
+}
+
+struct node *insert_after(struct node* start)
+{
+    struct node *new_node,*ptr,*pre_ptr;
+    int num,value;
+    printf("Enter the data:");
+    scanf("%d",num);
+    printf("enter the value after which data has to be inserted");
+    scanf("%d",&value);
+    new_node=(struct node *)malloc(sizeof(struct node));
+    new_node->data=num;
+    ptr=start;
+    pre_ptr=ptr;
+    while(pre_ptr->data!=val)
+    {
+        pre_ptr=ptr;
+        ptr=ptr->next;
+    }
+    pre_ptr->next=new_node;
+    new_node->next=ptr;
+    return start;
+}
+struct node *delete_node(struct node *start)
+{
+    struct node *ptr,*pre_ptr;
+    int val;
+    printf("\n enter value of node which has to be deleted:");
+    scanf("%d",&val);
+    ptr=start;
+    if(ptr->data==val)
+    {
+        start=start->next;
+        free(ptr);
+        return start;
+    }
+    else
+    {
+        while(ptr->data!=val)
+        {
+            pre_ptr=ptr;
+            ptr=ptr->next;
+        }
+        pre_ptr->next=ptr->next;
+        free(ptr);
+        return start;
+
+    }
+}
+struct node *display_list(struct node *start)
+{
+    struct node *ptr;
+    ptr=start;
+    while(ptr!=NULL)
+    {
+        printf("\t %d|"ptr->data);
+        ptr=ptr->next;
+
+    }
+    return start;
+}
+
+struct node
+{
+    struct node *next;
+    struct node *prev;
+    int data;
+};
+struct node *start=NULL;
+int main()
+{
+    int choice;
+    printf("\n 1. create linked list");
+    printf("\n 2. add in beginning");
+    printf("\n 3. add at end");
+    printf("\n 4. delete from beginning");
+    printf("\n 5. delete from end");
+    scanf("%d",&choice);
+    switch(choice)
+    {
+        case 1: start=create_linked_list(start);
+        break;
+        case 2: start=insert_begin(start);
+        break;
+        case 3: start=insert_end(start);
+        break;
+        case 4: start=delete_begin(start);
+        break;
+        case 5: start=delete_end(start);
+        break;
+    }
+    return0;
+}
