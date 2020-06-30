@@ -1,0 +1,20 @@
+1.c++ program to find the centroid of a triangle
+using namespace std; 
+  
+// Driver code 
+int main() 
+{ 
+    // coordinate of the vertices 
+    float x1 = 1, x2 = 3, x3 = 6; 
+    float y1 = 2, y2 = -4, y3 = -7; 
+  
+    // Formula to calculate centroid 
+    float x = (x1 + x2 + x3) / 3; 
+    float y = (y1 + y2 + y3) / 3; 
+  
+    cout << setprecision(3); 
+    cout << "Centroid = "
+         << "(" << x << ", " << y << ")"; 
+  
+    return 0; 
+} 
